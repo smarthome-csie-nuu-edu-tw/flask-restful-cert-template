@@ -1,0 +1,21 @@
+stages:
+  - name: build sonarqube runner image
+    steps:
+    - publishImageConfig:
+        dockerfilePath: ./build/sonarqube/sonar-runner/Dockerfile
+        buildContext: .
+        tag: devops-sonarrunner:${CICD_EXECUTION_SEQUENCE}
+    - applyYamlConfig:
+        path: ./build/sonarqube/sonar-runner/k8s-yaml/sonar-runner-deployment.yaml
+  - name: Publish flask image
+    steps:
+    - publishImageConfig:
+        dockerfilePath: ./sample/flaskrestful/dockerfile/Dockerfile
+        buildContext: .
+        tag: demoyuw/devops-demo-flask-restful:${CICD_EXECUTION_SEQUENCE}
+  # - name: deploy flask-${CICD_GIT_BRANCH} environment
+  #   steps:
+  #   - applyYamlConfig:
+  #       path: ./sample/flaskrestful/k8s-yaml/flask-deployment.yaml
+  #   - applyYamlConfig:
+  #       path: ./sample/flaskrestful/k8s-yaml/flask-service.yaml

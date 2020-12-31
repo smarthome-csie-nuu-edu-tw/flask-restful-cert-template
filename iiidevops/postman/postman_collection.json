@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "3a5edbf4-cc75-457c-b52a-893e69580f1a",
+		"name": "Demo Project (Flask Restful)",
+		"description": "pm.environment.set('Http_URL', 'http://10.50.1.56:31850')\r\npm.environment.set('username', 'rd_1')\r\npm.environment.set('password', 'openstack')\r\npm.environment.set('successMessage', 'success')",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得工作",
+			"item": [
+				{
+					"name": "第一層",
+					"item": [
+						{
+							"name": "第二層",
+							"item": [
+								{
+									"name": "2-1",
+									"item": [
+										{
+											"name": "取得伺服器資訊 2-1A",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "bfb38a9c-1bd1-4fe7-b7b1-269d8b92b308",
+														"exec": [
+															"\r",
+															"pm.test(\"Test response \", function () {\r",
+															"    pm.expect(pm.response.json().serverInfo).eql(pm.environment.get('SERVER_INFO'));\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{test_origin}}/serverinfo",
+													"host": [
+														"{{test_origin}}"
+													],
+													"path": [
+														"serverinfo"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "取得伺服器資訊 2-1B",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "3ab4a6a5-6208-41ef-8fee-962afc26b969",
+														"exec": [
+															"\r",
+															"pm.test(\"Test response \", function () {\r",
+															"    pm.expect(pm.response.json().serverInfo).eql(pm.environment.get('SERVER_INFO'));\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{test_origin}}/serverinfo",
+													"host": [
+														"{{test_origin}}"
+													],
+													"path": [
+														"serverinfo"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "2-2",
+									"item": [
+										{
+											"name": "取得伺服器資訊 2-2",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "669c327d-a1f1-4058-8235-325a50104a4e",
+														"exec": [
+															"\r",
+															"pm.test(\"Test response \", function () {\r",
+															"    pm.expect(pm.response.json().serverInfo).eql(\"ERROR\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{test_origin}}/serverinfo",
+													"host": [
+														"{{test_origin}}"
+													],
+													"path": [
+														"serverinfo"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "第三層",
+									"item": [
+										{
+											"name": "第四層",
+											"item": [
+												{
+													"name": "第五層",
+													"item": [
+														{
+															"name": "第六層",
+															"item": [
+																{
+																	"name": "第七層",
+																	"item": [
+																		{
+																			"name": "第八層",
+																			"item": [
+																				{
+																					"name": "第九層",
+																					"item": [
+																						{
+																							"name": "取得第一號任務",
+																							"event": [
+																								{
+																									"listen": "test",
+																									"script": {
+																										"id": "f61e3527-7a6a-4a1e-b247-ffe7389f9625",
+																										"exec": [
+																											"\r",
+																											"\r",
+																											"pm.test(\"Test Value ID 1\", function () {\r",
+																											"    pm.expect(pm.response.json().task).to.be.not.eql('build an WEB');\r",
+																											"});"
+																										],
+																										"type": "text/javascript"
+																									}
+																								}
+																							],
+																							"request": {
+																								"method": "POST",
+																								"header": [],
+																								"body": {
+																									"mode": "formdata",
+																									"formdata": [
+																										{
+																											"key": "id",
+																											"value": "1",
+																											"type": "text"
+																										}
+																									],
+																									"options": {
+																										"raw": {
+																											"language": "json"
+																										}
+																									}
+																								},
+																								"url": {
+																									"raw": "{{test_origin}}/gettodo",
+																									"host": [
+																										"{{test_origin}}"
+																									],
+																									"path": [
+																										"gettodo"
+																									],
+																									"query": [
+																										{
+																											"key": "id",
+																											"value": "1",
+																											"disabled": true
+																										}
+																									]
+																								}
+																							},
+																							"response": []
+																						},
+																						{
+																							"name": "取得第三號任務",
+																							"event": [
+																								{
+																									"listen": "test",
+																									"script": {
+																										"id": "eb3f75e6-5429-4711-b29f-b5704b8c7b7b",
+																										"exec": [
+																											"\r",
+																											"\r",
+																											"pm.test(\"Test Value ID 3\", function () {\r",
+																											"    pm.expect(pm.response.json().task).to.eql('profit!');\r",
+																											"});"
+																										],
+																										"type": "text/javascript"
+																									}
+																								},
+																								{
+																									"listen": "prerequest",
+																									"script": {
+																										"id": "3ae00efb-7994-454d-a63a-6941337c2eca",
+																										"exec": [
+																											"pm.environment.get('todo_id')"
+																										],
+																										"type": "text/javascript"
+																									}
+																								}
+																							],
+																							"request": {
+																								"method": "POST",
+																								"header": [],
+																								"body": {
+																									"mode": "formdata",
+																									"formdata": [
+																										{
+																											"key": "id",
+																											"value": "3",
+																											"type": "text"
+																										}
+																									],
+																									"options": {
+																										"raw": {
+																											"language": "json"
+																										}
+																									}
+																								},
+																								"url": {
+																									"raw": "{{test_origin}}/gettodo",
+																									"host": [
+																										"{{test_origin}}"
+																									],
+																									"path": [
+																										"gettodo"
+																									]
+																								}
+																							},
+																							"response": []
+																						}
+																					],
+																					"protocolProfileBehavior": {},
+																					"_postman_isSubFolder": true
+																				}
+																			],
+																			"protocolProfileBehavior": {},
+																			"_postman_isSubFolder": true
+																		}
+																	],
+																	"protocolProfileBehavior": {},
+																	"_postman_isSubFolder": true
+																}
+															],
+															"protocolProfileBehavior": {},
+															"_postman_isSubFolder": true
+														}
+													],
+													"protocolProfileBehavior": {},
+													"_postman_isSubFolder": true
+												},
+												{
+													"name": "取得目前工作列表",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "9bd21212-3291-45bc-b51a-a52f6d39ed12",
+																"exec": [
+																	"var data  = pm.response.json();\r",
+																	"console.log(typeof(data))\r",
+																	"\r",
+																	"var project_id = 0 ;\r",
+																	"var todo_id  = 0 ;\r",
+																	"for(var index in data) {    \r",
+																	"   console.log(index)\r",
+																	"   console.log(typeof(index))\r",
+																	"       if( todo_id < parseInt(index))\r",
+																	"        todo_id = parseInt(index)\r",
+																	"}\r",
+																	"\r",
+																	"pm.test(\"Test response \", function () {\r",
+																	"    pm.expect(typeof(pm.response.json())).to.eql(\"object\");\r",
+																	"    pm.expect(pm.response.json().length).not.eql(0);\r",
+																	"    pm.environment.set('todo_id',todo_id);\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{test_origin}}/todos",
+															"host": [
+																"{{test_origin}}"
+															],
+															"path": [
+																"todos"
+															]
+														}
+													},
+													"response": []
+												}
+											],
+											"protocolProfileBehavior": {},
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "取得伺服器資訊",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "041a2ec2-2ea8-4151-84cc-dd5811503cd9",
+														"exec": [
+															"\r",
+															"pm.test(\"Test response \", function () {\r",
+															"    pm.expect(pm.response.json().serverInfo).eql(pm.environment.get('SERVER_INFO'));\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{test_origin}}/serverinfo",
+													"host": [
+														"{{test_origin}}"
+													],
+													"path": [
+														"serverinfo"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "增加新的任務",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7b8bae08-07d2-4406-b332-52a075b8d25f",
+						"exec": [
+							"var todo_id = parseInt(pm.environment.get('todo_id'))+1;\r",
+							"pm.environment.set('todo_id', todo_id)\r",
+							"\r",
+							"var taskname = pm.environment.get('task_name')\r",
+							"\r",
+							"var task_run_name = taskname + todo_id\r",
+							"\r",
+							"pm.environment.set('task_data',task_run_name)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c89031e0-697b-4026-88d2-acf8b37e6ba0",
+						"exec": [
+							"\r",
+							"var responseKeys = ['data', 'id'];\r",
+							"\r",
+							"pm.test(\"API Server Response OK\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.all.keys(responseKeys);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"API Server Task Data OK\", function () {\r",
+							"    console.log(pm.response.json().data)\r",
+							"    console.log(pm.environment.get('task_data'))\r",
+							"    pm.expect(pm.response.json().data).to.eql(pm.environment.get('task_data'));\r",
+							"\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"API Server Task ID OK\", function () {\r",
+							"    console.log(pm.response.json().id)\r",
+							"    console.log(pm.environment.get('todo_id'))\r",
+							"    pm.expect(parseInt(pm.response.json().id)).to.eql(pm.environment.get('todo_id'));\r",
+							"});\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task\" : \"{{task_data}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_origin}}/todos",
+					"host": [
+						"{{test_origin}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "確認新的任務有增加",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ccca7d3-7d65-48a6-8e72-64b55fa62502",
+						"exec": [
+							"\r",
+							"var responseKeys = ['task'];\r",
+							"\r",
+							"pm.test(\"API Server Response OK\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.all.keys(responseKeys);\r",
+							"});\r",
+							"pm.test(\"Test response \", function () {\r",
+							"    pm.expect(pm.response.json().task).to.eql(pm.environment.get('task_data'));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "{{todo_id}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_origin}}/gettodo",
+					"host": [
+						"{{test_origin}}"
+					],
+					"path": [
+						"gettodo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "549ada3a-d5a3-482e-b745-7aa9c2ca45ca",
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.set('task_name', 'TODO LIST JOB Now is :')"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "22bc6aa2-27fc-426f-82db-bb7de5318dd5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
