@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: apitest-${CICD_PIPELINE_ID}-${CICD_EXECUTION_SEQUENCE}-svc
+  name: apitest-${CICD_PIPELINE_ID}-svc
   labels: 
-    app: apitest-${CICD_PIPELINE_ID}-${CICD_EXECUTION_SEQUENCE}
+    app: apitest-${CICD_PIPELINE_ID}
 spec:
   type: NodePort
   selector:
-    app: apitest-${CICD_PIPELINE_ID}-${CICD_EXECUTION_SEQUENCE}
+    app: apitest-${CICD_PIPELINE_ID}
   ports:
     - protocol: TCP
       port: 5000

@@ -5,11 +5,11 @@ metadata:
 spec:
 #
   rules:
-  - host: "apitest.${CICD_PIPELINE_ID}.${CICD_EXECUTION_SEQUENCE}.140.92.4.5.xip.io"
+  - host: "apitest.${CICD_PIPELINE_ID}.${CICD_EXECUTION_SEQUENCE}.10.20.0.80.xip.io"
     http:
       paths:
       - backend:
-          serviceName: apitest-${CICD_PIPELINE_ID}-${CICD_EXECUTION_SEQUENCE}-svc
+          serviceName: apitest-${CICD_PIPELINE_ID}-svc
           servicePort: 5000
         path: "/"
         pathType: "ImplementationSpecific"
