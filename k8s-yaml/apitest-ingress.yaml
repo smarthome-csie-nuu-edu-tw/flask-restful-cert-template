@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: apitest-ing
+spec:
+#
+  rules:
+  - host: "apitest.${CICD_PIPELINE_ID}.${CICD_EXECUTION_SEQUENCE}.140.92.4.5.xip.io"
+    http:
+      paths:
+      - backend:
+          serviceName: apitest-${CICD_PIPELINE_ID}-${CICD_EXECUTION_SEQUENCE}-svc
+          servicePort: 5000
+        path: "/"
+        pathType: "ImplementationSpecific"
