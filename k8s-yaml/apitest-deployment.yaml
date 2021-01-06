@@ -1,22 +1,22 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: apitest-${CICD_PIPELINE_ID}
+  name: ${CICD_GIT_REPO_NAME}-apitest
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apitest-${CICD_PIPELINE_ID}
+      app: ${CICD_GIT_REPO_NAME}-apitest
   template:
     metadata:
       labels:
-        app: apitest-${CICD_PIPELINE_ID}
+        app: ${CICD_GIT_REPO_NAME}-apitest
     spec:
       imagePullSecrets:
-      - name: harbor-63
+      - name: harbor-local
       containers:
       - name: apitest
-        image: 10.20.0.67:5443/${CICD_GIT_REPO_NAME}/api-test:${CICD_EXECUTION_SEQUENCE}
+        image: 10.20.0.73:5443/${CICD_GIT_REPO_NAME}/api-test:${CICD_EXECUTION_SEQUENCE}
         ports:
         - containerPort: 5000
    
