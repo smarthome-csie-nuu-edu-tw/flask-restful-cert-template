@@ -19,8 +19,8 @@ stages:
       path: ./k8s-yaml/apitest-deployment.yaml
   - applyYamlConfig:
       path: ./k8s-yaml/apitest-service.yaml
-  - applyYamlConfig:
-      path: ./k8s-yaml/apitest-ingress.yaml
+  #- applyYamlConfig:
+  #    path: ./k8s-yaml/apitest-ingress.yaml
 - name: Test--API Server
   steps:
   - runScriptConfig:
@@ -66,12 +66,6 @@ stages:
     - sourceName: nexus
       sourceKey: password
       targetKey: api_password
-    - sourceName: gitlab-token
-      sourceKey: git-token
-      targetKey: git_token
-    - sourceName: jwt-token
-      sourceKey: jwt-token
-      targetKey: jwt_token
     - sourceName: checkmarx
       sourceKey: username
       targetKey: username
