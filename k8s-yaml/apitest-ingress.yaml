@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: apitest-ing
+  name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-ing
 spec:
 #
   rules:
-  - host: "apitest.${CICD_GIT_REPO_NAME}.10.20.0.74.xip.io"
+  - host: "${CICD_GIT_REPO_NAME}.${CICD_GIT_BRANCH}.10.20.0.74.xip.io"
     http:
       paths:
       - backend:
-          serviceName: ${CICD_GIT_REPO_NAME}-apitest-svc
+          serviceName: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-apitest-svc
           servicePort: 5000
         path: "/"
         pathType: "ImplementationSpecific"
