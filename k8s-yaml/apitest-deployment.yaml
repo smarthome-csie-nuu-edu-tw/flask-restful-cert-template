@@ -2,6 +2,7 @@ apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-apitest
+  namespace: ${CICD_GIT_REPO_NAME}
 spec:
   replicas: 1
   selector:
@@ -16,7 +17,7 @@ spec:
       - name: harbor-local
       containers:
       - name: apitest
-        image: 10.20.0.73:5443/${CICD_GIT_REPO_NAME}/api-test:${CICD_EXECUTION_SEQUENCE}
+        image: "10.20.0.73:5443/${CICD_GIT_REPO_NAME}/api-test:${CICD_GIT_COMMIT}"
         ports:
         - containerPort: 5000
    
