@@ -84,7 +84,7 @@ stages:
 - name: Run webinspect-runner
   steps:
   - runScriptConfig:
-      image: iiiorg/webinspect-runner
+      image: 10.20.0.73:5443/dockerhub/iiiorg/webinspect-runner
       shellScript: cd /usr/src/app; node /usr/src/app/app.js
     env:
       inspect_url: "http://apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.10.20.0.74.xip.io"
