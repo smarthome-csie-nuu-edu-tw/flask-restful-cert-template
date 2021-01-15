@@ -94,7 +94,7 @@ stages:
       verbose: true
     envFrom:
     - sourceName: webinspect
-      sourceKey: wi_base_url
+      sourceKey: wi-base-url
       targetKey: wi_base_url
     - sourceName: nexus
       sourceKey: username
