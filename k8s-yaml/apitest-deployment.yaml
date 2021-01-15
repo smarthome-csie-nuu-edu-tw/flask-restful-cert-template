@@ -17,7 +17,7 @@ spec:
       - name: harbor-local
       containers:
       - name: apitest
-        image: "10.20.0.73:5443/${CICD_GIT_REPO_NAME}/api-test:${CICD_GIT_COMMIT}"
+        image: "${CICD_IMAGE}:${CICD_GIT_COMMIT}"
         ports:
         - containerPort: 5000
    
