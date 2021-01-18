@@ -5,7 +5,7 @@ metadata:
   namespace: ${CICD_GIT_REPO_NAME}
 spec:
   rules:
-  - host: "apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.10.20.0.74.xip.io"
+  - host: "apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.120.105.129.178.xip.io"
     http:
       paths:
       - backend:
