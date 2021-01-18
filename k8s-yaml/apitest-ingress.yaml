@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-ing
   namespace: ${CICD_GIT_REPO_NAME}
+  annotations:
+    # 憑證產生
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   rules:
   - host: "apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.120.105.129.178.xip.io"
