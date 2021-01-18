@@ -10,7 +10,7 @@ stages:
     env:
       #PLUGIN_INSECURE: "true"
       #PLUGIN_MTU: "1000"
-      #PLUGIN_BUILD_ARGS: "--progress=tty --network=host"
+      PLUGIN_BUILD_ARGS: "--progress=tty --network=host"
       PLUGIN_MIRROR: "https://mirror.gcr.io"
       #PLUGIN_DEBUG: "true"
 - name: deploy--API server
