@@ -7,11 +7,11 @@ stages:
       tag: ${CICD_GIT_REPO_NAME}/api-test:${CICD_GIT_COMMIT}
       #pushRemote: true
       #registry: harbor.smarthome.csie.nuu.edu.tw
-    env:
-      PLUGIN_INSECURE: "false"
-      PLUGIN_BUILD_ARGS: "--progress=tty --network=host"
-      PLUGIN_MIRROR: "https://mirror.gcr.io"
-      PLUGIN_DEBUG: "true"
+    #env:
+      #PLUGIN_INSECURE: "true"
+      #PLUGIN_BUILD_ARGS: "--progress=tty --network=host"
+      #PLUGIN_MIRROR: "https://mirror.gcr.io"
+      #PLUGIN_DEBUG: "true"
       
 - name: issue with lets-letsencrypt
   steps:
