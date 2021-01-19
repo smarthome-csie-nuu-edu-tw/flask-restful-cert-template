@@ -12,6 +12,12 @@ stages:
       PLUGIN_BUILD_ARGS: "--progress=tty --network=host"
       PLUGIN_MIRROR: "https://mirror.gcr.io"
       PLUGIN_DEBUG: "true"
+      
+- name: issue with lets-letsencrypt
+  steps:
+  - applyYamlConfig:
+      path: ./k8s-yaml/apitest-issuer-staging
+      
 - name: deploy--API server
   steps:
   - applyYamlConfig:
