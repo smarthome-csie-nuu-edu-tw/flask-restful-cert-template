@@ -8,6 +8,10 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  tls:
+  - hosts:
+    - "apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.120.105.129.178.xip.io"
+    secretName: apitest-${CICD_GIT_BRANCH}-${CICD_GIT_REPO_NAME}-xip-tls
   rules:
   - host: "apitest.${CICD_GIT_BRANCH}.${CICD_GIT_REPO_NAME}.120.105.129.178.xip.io"
     http:
